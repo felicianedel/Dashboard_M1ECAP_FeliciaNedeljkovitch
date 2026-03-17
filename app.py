@@ -143,8 +143,9 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
 app.layout = dbc.Container([
-    # HEADER
-    dbc.Row([
+   # HEADER
+dbc.Row(
+    [
         dbc.Col(
             html.H2(
                 "ECAP Store",
@@ -170,13 +171,17 @@ app.layout = dbc.Container([
                 ],
                 placeholder="Choisissez des zones",
                 multi=True,
-                style={"fontSize": "14px"}
+                style={
+                    "fontSize": "14px",
+                    "width": "100%",
+                    "minWidth": "280px"
+                }
             ),
             md=6,
             style={
                 "display": "flex",
                 "alignItems": "center",
-                "justifyContent": "center",
+                "justifyContent": "flex-end",
                 "height": "100%"
             }
         )
@@ -184,9 +189,10 @@ app.layout = dbc.Container([
     className="g-0",
     style={
         "backgroundColor": "#b9dbea",
-        "height": "7vh",
-        "padding": "0 8px"
-    }),
+        "minHeight": "70px",
+        "padding": "8px 12px"
+    }
+),
 
     # CONTENU
     dbc.Row([
