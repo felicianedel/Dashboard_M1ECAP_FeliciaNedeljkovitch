@@ -5,7 +5,7 @@ import calendar as cal
 import plotly.express as px
 
 #DONNNEES --------------------------------------------------------------------------
-df = pd.read_csv("datasets/data.csv")
+df = pd.read_csv("data.csv")
 df = df[["CustomerID", "Gender", "Location", "Product_Category", "Quantity", "Avg_Price", "Transaction_Date",
   "Month", "Discount_pct"]]
 df["CustomerID"]=df["CustomerID"].fillna(0).astype(int)
